@@ -2,8 +2,27 @@ const http = require("http");
 const url = require("url");
 
 const users = [
-  { NationalNo: "99610687", FirstArabicName: "كرببيم" },
-  { NationalNo: "12345678", FirstArabicName: "أحمد" }
+  { "NationalNo": local!nationalNo,
+        "FirstArabicName": "كريم",
+        "SecondArabicName": "رمزى",
+        "ThirdArabicName": "كريم",
+        "FourthArabicName": "ناصر",
+        "FirstEnglishName": "KARIM",
+        "SecondEnglishName": "RAMZI",
+        "ThirdEnglishName": "KARIM",
+        "FourthEnglishName": "NASSER",
+        "FullEnglishName": "KARIM RAMZI KARIM NASSER",
+        "FullArabicName": "كريم رمزى كريم ناصر",
+        "Nationality": "اردني",
+        "Gender": "ذكر",
+        "Status": "حي",
+        "Religion": "",
+        "MaritalStatus": "أعزب / عزباء",
+        "MaritalStatusEn": "SINGLE",
+        "CountryOfBirth": "JORDAN",
+        "PlaceOfBirth": "عمان / العاصمه",
+        "DateOfBirth": "23/12/1996",
+        "CardOffice": "بطاقات عمان الغربية" }
 ];
 
 const server = http.createServer((req, res) => {
