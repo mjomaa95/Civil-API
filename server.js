@@ -4,7 +4,7 @@ const url = require("url");
 const users = [
   { 
     NationalNo: "99610687",
-FirstArabicName: "كريم",
+FirstArabicName: "كريم99610687",
 SecondArabicName: "محمد",
 ThirdArabicName: "احمد",
 FourthArabicName: "ناصر",
@@ -29,7 +29,7 @@ CardOffice: "بطاقات عمان "
   { 
     
     NationalNo: "12345678",
-FirstArabicName: "كريم",
+FirstArabicName: "12345678كريم",
 SecondArabicName: "محمد",
 ThirdArabicName: "احمد",
 FourthArabicName: "ناصر",
