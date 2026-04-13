@@ -3,7 +3,74 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// API endpoint
+// ====== DATA (زي ما هي بدون حذف) ======
+const users = [
+  { 
+    NationalNo: "99610687",
+    FirstArabicName: "كريم",
+    SecondArabicName: "محمد",
+    ThirdArabicName: "احمد",
+    FourthArabicName: "ناصر",
+    FirstEnglishName: "KARIM",
+    SecondEnglishName: "mohmd",
+    ThirdEnglishName: "ahmad",
+    FourthEnglishName: "NASSER",
+    FullEnglishName: "KARIM NASSER",
+    FullArabicName: "كريم ناصر",
+    Nationality: "اردني",
+    Gender: "ذكر",
+    Status: "حي",
+    Religion: "",
+    MaritalStatus: "أعزب / عزباء",
+    MaritalStatusEn: "SINGLE",
+    CountryOfBirth: "JORDAN",
+    PlaceOfBirth: "عمان / العاصمه",
+    DateOfBirth: "23/12/1993",
+    CardOffice: "بطاقات عمان "
+  },
+  { 
+    NationalNo: "12345678",
+    FirstArabicName: "حسام",
+    SecondArabicName: "محمد",
+    ThirdArabicName: "احمد",
+    FourthArabicName: "ناصر",
+    FirstEnglishName: "KARIM",
+    SecondEnglishName: "mohmd",
+    ThirdEnglishName: "ahmad",
+    FourthEnglishName: "NASSER",
+    FullEnglishName: "KARIM NASSER",
+    FullArabicName: "كريم ناصر",
+    Nationality: "اردني",
+    Gender: "ذكر",
+    Status: "حي",
+    Religion: "",
+    MaritalStatus: "أعزب / عزباء",
+    MaritalStatusEn: "SINGLE",
+    CountryOfBirth: "JORDAN",
+    PlaceOfBirth: "عمان / العاصمه",
+    DateOfBirth: "23/12/1993",
+    CardOffice: "بطاقات عمان "
+  }
+];
+
+// ====== Civil API ======
+app.get("/civil", (req, res) => {
+  const nationalNo = req.query.NationalNo;
+
+  if (!nationalNo) {
+    return res.status(400).json({ error: "NationalNo is required" });
+  }
+
+  const user = users.find(u => u.NationalNo === nationalNo);
+
+  if (!user) {
+    return res.status(404).json({ error: "Not found" });
+  }
+
+  return res.json(user);
+});
+
+// ====== Credit API ======
 app.get("/api/credit-report", (req, res) => {
   res.json({
     RsBody: {
@@ -145,11 +212,12 @@ app.get("/api/credit-report", (req, res) => {
   });
 });
 
-// root route
+// ====== Root ======
 app.get("/", (req, res) => {
   res.send("API is running 🚀");
 });
 
+// ====== Start Server ======
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
