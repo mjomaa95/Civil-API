@@ -4,7 +4,7 @@ const url = require("url");
 const users = [
   { 
     NationalNo: "99610687",
-FirstArabicName: "كريم99610687",
+FirstArabicName: "كريم",
 SecondArabicName: "محمد",
 ThirdArabicName: "احمد",
 FourthArabicName: "ناصر",
